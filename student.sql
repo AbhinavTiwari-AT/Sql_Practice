@@ -1,0 +1,61 @@
+create database college;
+use college;
+
+create table student (
+       rollno int primary key,
+       name varchar(50),
+       marks int not null,
+       grade varchar(1),
+       city varchar(20)
+       );
+
+
+select * from college.student;
+
+
+
+insert into student (rollno, name,marks,grade,city) values 
+(101,"anil",78,"C","Pune"),
+(102,"bhumika",93,"A","Mumbai"),
+(103,"Chetan",85,"B","Mumbai"),
+(104,"dhruv",96,"A","Delhi"),
+(105,"emanuel",12,"F","Delhi"),
+(106,"farah",82,"B","Delhi");
+
+
+
+select * from student where marks > 80 ;
+
+select * from student where city = "Mumbai";
+
+select * from student where  marks  between 80 and 90;
+
+select * from student where city in ("Delhi");
+
+select * from student where marks > 80 or city = ("Delhi");
+
+select * from student where marks > 75 limit 3;
+
+select * from student order by city Asc;
+
+select marks from student order by marks desc;
+
+select * from student order by marks desc limit 4;
+
+select MAX(marks) from student ;
+
+select min(marks) from student;
+
+select avg(marks) from student;
+
+select count(city) from student;
+
+select sum(rollno) from student;
+
+select city from student group by city;
+
+select city,count(rollno) from student group by city;
+
+select city,avg(marks) from student group by city;
+
+select grade,count(name) from student grade group by grade order by grade;
