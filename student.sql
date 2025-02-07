@@ -152,3 +152,5 @@ select * from course as c right join stud as s on c.st_id = s.st_id;
 select * from stud as s left join  course as  c  on s.st_id = c.st_id union  select * from  stud  as s right join course as c on s.st_id = c.st_id;
 
 select * from stud as a left join course as b on a.st_id = b.st_id is null;
+
+select * from course as a right join stud as b on a.st_id = b.st_id is null; 
