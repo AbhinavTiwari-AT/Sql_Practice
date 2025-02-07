@@ -14,14 +14,13 @@ select * from college.student;
 
 
 
-insert into student (rollno, name,marks,grade,city) values 
+insert into student (rollno,name,marks,grade,city) values 
 (101,"anil",78,"C","Pune"),
 (102,"bhumika",93,"A","Mumbai"),
 (103,"Chetan",85,"B","Mumbai"),
 (104,"dhruv",96,"A","Delhi"),
 (105,"emanuel",12,"F","Delhi"),
 (106,"farah",82,"B","Delhi");
-
 
 
 select * from student where marks > 80 ;
@@ -59,3 +58,74 @@ select city,count(rollno) from student group by city;
 select city,avg(marks) from student group by city;
 
 select grade,count(name) from student grade group by grade order by grade;
+
+insert into student values (112,"xyz",63,"A","Awarpur");
+
+delete from student where rollno = 112;
+
+set sql_safe_updates = 0;
+
+update student set grade ="O" where grade ="A";
+
+update student set name ="John" where name ="emanuel";
+
+update student set grade ="B" where marks between 80 And 90;
+
+update student set marks = marks + 1;
+
+delete from student where marks < 30;
+
+create table dept (
+id int primary key,
+name varchar(50));
+
+create table teacher (
+id int primary key,
+name varchar(50),
+dept_id int,
+foreign key (dept_id) references dept(id) 
+);
+
+select * from college.dept;
+select * from college.teacher;
+
+insert into dept values (101,"english"),(102,"IT");
+
+
+
+drop table teacher;
+
+create table teacher (
+id int primary key,
+name varchar(50),
+dept_id int,
+foreign key (dept_id) references dept(id) 
+on delete cascade 
+on update cascade
+);
+
+select * from teacher;
+
+insert into teacher values (1,"Adam",101),(2,"Eve",102);
+
+update dept set id = 111 where id = 101;
+
+alter table student add age int;
+
+select * from student;
+
+alter table student change column age dob int; 
+
+alter table student drop column dob;
+
+truncate table student;
+
+alter table student change column name fullname varchar(50);
+
+delete from student where marks < 80 ;
+
+alter table student drop column grade;
+
+drop table student;
+
+create table student;
