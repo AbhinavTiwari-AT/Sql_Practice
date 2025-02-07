@@ -129,3 +129,26 @@ alter table student drop column grade;
 drop table student;
 
 create table student;
+
+create table stud(st_id int primary key,
+name varchar(50));
+
+select * from college.stud;
+
+insert into stud values (101,"adam"),(102,"bob"),(103,"Casey");
+
+create table course (st_id int primary key , name varchar(50));
+
+select * from college.course;
+
+insert into course values (102,"English"),(105,"Math"),(103,"Science"),(107,"computer science");
+
+select * from stud inner join course on stud.st_id = course.st_id;
+
+select * from stud as s left join course as c on s.st_id = c.st_id;
+
+select * from course as c right join stud as s on c.st_id = s.st_id;
+
+select * from stud as s left join  course as  c  on s.st_id = c.st_id union  select * from  stud  as s right join course as c on s.st_id = c.st_id;
+
+select * from stud as a left join course as b on a.st_id = b.st_id is null;
