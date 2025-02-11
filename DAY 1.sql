@@ -76,7 +76,15 @@ INSERT INTO orders (id, customer_id, order_date, total_amount) VALUES
 (5, 5, '2024-01-25', 1800);
 
 
+select * from employees;
 
+select * from users;
+
+select * from products;
+
+select * from customers;
+
+select * from orders;
 
 
 
