@@ -86,7 +86,20 @@ select * from customers;
 
 select * from orders;
 
+select id, name from employees;
 
+select * from products where price > 1000;
 
+select * from customers where name  like 'A%';
 
+select * from orders order by order_date desc;
 
+select * from employees where hire_date > '2020-01-01';
+
+select * from products where name like '%phone%';
+
+select distinct city from customers;
+
+select * from customers where id not in (select customer_id from orders );
+
+select * from orders where order_date between '2023-01-01' AND '2024-01-01';
